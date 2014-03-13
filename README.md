@@ -19,7 +19,13 @@ mrt add accounts-ui-bootstrap-3
 How to use
 -------------
 
-Add {{ loginButtons }} to your template
+**Pre-Blaze**
+
+Add `{{loginButtons}}` to your template.
+
+**Using Blaze**
+
+Add `{{>_loginButtons}}` to your template.
 
 Aligning
 -------------
@@ -33,6 +39,8 @@ or
 ```
 {{ loginButtons align="left"}}
 ```
+
+Note that in the Blaze branch you will need to use `{{>_loginButtons}}`.
 
 Example:
 
