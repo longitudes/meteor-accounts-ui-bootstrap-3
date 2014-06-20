@@ -3,7 +3,7 @@
 <!-- LOGGED IN -->
 <!--           -->
 <template name="_loginButtonsLoggedInDropdown">
-  <li id="login-dropdown-list" class="dropdown">
+  <div id="login-dropdown-list" class="dropdown login-dropdown-list">
     <a class="dropdown-toggle"  data-toggle="dropdown">
       {{displayName}}
       <b class="caret"></b>
@@ -19,7 +19,7 @@
         {{/if}}
       {{/if}}
     </div>
-  </li>
+  </div>
 </template>
 
 <template name="_loginButtonsLoggedInDropdownActions">
@@ -38,39 +38,15 @@
 <!-- LOGGED OUT -->
 <!--            -->
 <template name="_loginButtonsLoggedOutDropdown">
-  <li id="login-dropdown-list" class="dropdown">
-    <a class="dropdown-toggle"  data-toggle="dropdown">
-      Sign In{{#unless forbidClientAccountCreation}} / Up{{/unless}}
-      <b class="caret"></b>
-    </a>
-    <div class="dropdown-menu">
-      {{> _loginButtonsLoggedOutAllServices}}
-    </div>
-  </li>
+    <a class="sign sign-up" data-toggle="modal" data-targetid="sign-up" href="#sign-popup">Sign up</a>
+    <a class="sign sign-in" data-toggle="modal" data-targetid="sign-in" href="#sign-popup">Sign in</a>
+    {{> _loginButtonsLoggedOutAllServices}}
 </template>
 
 <template name="_loginButtonsLoggedOutAllServices">
   {{#each services}}
-  {{#unless hasPasswordService}}
-    {{> _loginButtonsMessages}}
-  {{/unless}}
-    {{#if isPasswordService}}
-      {{#if hasOtherServices}} {{! the password service will always come last }}
-        {{> _loginButtonsLoggedOutPasswordServiceSeparator}}
-      {{/if}}
-      {{> _loginButtonsLoggedOutPasswordService}}
-    {{else}}
-      {{> _loginButtonsLoggedOutSingleLoginButton}}
-    {{/if}}
+    {{> _loginButtonsLoggedOutSingleLoginButton}}
   {{/each}}
-</template>
-
-<template name="_loginButtonsLoggedOutPasswordServiceSeparator">
-  <div class="or">
-    <span class="hline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    <span class="or-text">or</span>
-    <span class="hline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-  </div>
 </template>
 
 <template name="_loginButtonsLoggedOutPasswordService">

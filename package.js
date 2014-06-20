@@ -1,5 +1,5 @@
 Package.describe({
-  summary: "Bootstrap styled version of login widgets"
+  summary: "Bootstrap styled version of login widgets - Custom version"
 });
 
 Package.on_use(function (api) {

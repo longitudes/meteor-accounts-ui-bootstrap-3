@@ -2,6 +2,7 @@
   // for convenience
   var loginButtonsSession = Accounts._loginButtonsSession;
 
+
   Template._loginButtonsLoggedOutSingleLoginButton.events({
     'click .login-button': function () {
       var serviceName = this.name;
