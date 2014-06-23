@@ -10,15 +10,11 @@
     });
 
     // shared between dropdown and single mode
-    Template._loginButtons.events({
-        'click #login-buttons-logout': function() {
-            Meteor.logout(function() {
-                loginButtonsSession.closeDropdown();
-            });
-        }
-    });
-
-    //
+    Template._loginButtons.rendered = function(){
+        $('.logout-button').click(function(){
+            Meteor.logout();
+        });
+    };  //
     // loginButtonLoggedOut template
     //
 

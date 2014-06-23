@@ -3,22 +3,19 @@
 <!-- LOGGED IN -->
 <!--           -->
 <template name="_loginButtonsLoggedInDropdown">
-  <div id="login-dropdown-list" class="dropdown login-dropdown-list">
-    <a class="dropdown-toggle"  data-toggle="dropdown">
-      {{displayName}}
-      <b class="caret"></b>
-    </a>
-    <div class="dropdown-menu col-sm-3">
-      {{#if inMessageOnlyFlow}}
-        {{> _loginButtonsMessages}}
-      {{else}}
-        {{#if inChangePasswordFlow}}
-          {{> _loginButtonsChangePassword}}
-        {{else}}
-          {{> _loginButtonsLoggedInDropdownActions}}
-        {{/if}}
-      {{/if}}
-    </div>
+  <div class="user dropdown">
+      <a class="username" data-toggle="dropdown" href="#"> 
+          <img class="user-icon" src="/pages/components/navbar/user-icon.png" alt="Username" />
+          <span>{{displayName}}</span>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="username-drop">
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Settings</a></li>
+          <li class="divider"></li>
+          <li><a href="#">World Bank</a></li>
+          <li class="divider"></li>
+          <li><a href="#" class="logout-button">Sign Out</a></li>
+      </ul>
   </div>
 </template>
 
@@ -31,7 +28,7 @@
     <button class="btn btn-default btn-block" id="login-buttons-open-change-password">Change password</button>
   {{/if}}
 
-  <button class="btn btn-block btn-primary" id="login-buttons-logout">Sign out</button>
+  <button class="btn btn-block btn-primary logout-button" id="login-buttons-logout">Sign out</button>
 </template>
 
 <!--            -->

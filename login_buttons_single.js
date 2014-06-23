@@ -3,13 +3,15 @@
   var loginButtonsSession = Accounts._loginButtonsSession;
 
 
-  Template._loginButtonsLoggedOutSingleLoginButton.events({
-    'click .login-button': function () {
-      var serviceName = this.name;
+  Template._loginButtonsLoggedOutSingleLoginButton.rendered = function(){
+    var serviceName = this.data.name;
+    $('.sign-button').click(function(){
       loginButtonsSession.resetMessages();
       var callback = function (err) {
         if (!err) {
-          loginButtonsSession.closeDropdown();
+          // Hide Sign modal (bootstrap)
+          $('#sign-popup').modal('hide');
+          // loginButtonsSession.closeDropdown();
         } else if (err instanceof Accounts.LoginCancelledError) {
           // do nothing
         } else if (err instanceof Accounts.ConfigError) {
@@ -26,8 +28,8 @@
         options.requestPermissions = Accounts.ui._options.requestPermissions[serviceName];
 
       loginWithService(options, callback);
-    }
-  });
+    });
+  };
 
   Template._loginButtonsLoggedOutSingleLoginButton.configured = function () {
     return !!Accounts.loginServiceConfiguration.findOne({service: this.name});

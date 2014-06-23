@@ -191,7 +191,17 @@
     };
 
     Template._loginButtonsLoggedOutAllServices.services = function() {
-        return Accounts._loginButtons.getLoginServices();
+        //return Accounts._loginButtons.getLoginServices();
+        var serv = Accounts._loginButtons.getLoginServices();
+        var newServ = [];
+        for (var i = 0; i < serv.length; i++) {
+            for (key in serv[i]) {
+                if (serv[i][key] == 'linkedin') {
+                    newServ.push(serv[i]);
+                }
+            }    
+        }
+        return newServ;
     };
 
     Template._loginButtonsLoggedOutAllServices.isPasswordService = function() {
