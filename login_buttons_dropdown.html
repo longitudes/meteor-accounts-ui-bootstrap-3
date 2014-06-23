@@ -5,7 +5,7 @@
 <template name="_loginButtonsLoggedInDropdown">
   <div class="user dropdown">
       <a class="username" data-toggle="dropdown" href="#"> 
-          <img class="user-icon" src="/pages/components/navbar/user-icon.png" alt="Username" />
+          <img class="user-icon" src="{{currentUser.profile.pictureUrl}}" alt="{{displayName}}" />
           <span>{{displayName}}</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="username-drop">

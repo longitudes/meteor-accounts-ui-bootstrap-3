@@ -26,7 +26,12 @@
     //
     // loginButtonsLoggedInDropdown template and related
     //
-
+    Template._loginButtonsLoggedInDropdown.rendered = function() {
+        $('.logout-button').click(function(){
+            Meteor.logout();
+        });
+    };
+    
     Template._loginButtonsLoggedInDropdown.events({
         'click #login-buttons-open-change-password': function(event) {
             event.stopPropagation();
@@ -71,7 +76,6 @@
     //
     // loginButtonsLoggedOutDropdown template and related
     //
-
     Template._loginButtonsLoggedOutDropdown.events({
         'click #login-buttons-password': function() {
             loginOrSignup();

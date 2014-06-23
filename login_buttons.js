@@ -11,9 +11,7 @@
 
     // shared between dropdown and single mode
     Template._loginButtons.rendered = function(){
-        $('.logout-button').click(function(){
-            Meteor.logout();
-        });
+        
     };  //
     // loginButtonLoggedOut template
     //
