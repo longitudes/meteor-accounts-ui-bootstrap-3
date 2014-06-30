@@ -3,12 +3,12 @@
 <!-- LOGGED IN -->
 <!--           -->
 <template name="_loginButtonsLoggedInDropdown">
-  <div class="user dropdown">
-      <a class="username" data-toggle="dropdown" href="#"> 
+  <div class="user">
+      <a class="username dropdown" data-dropdown="usermenu-dropdown" href="#"> 
           <img class="user-icon" src="{{currentUser.profile.pictureUrl}}" alt="{{displayName}}" />
           <span>{{displayName}}</span>
       </a>
-      <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="username-drop">
+      <ul id="usermenu-dropdown" class="usermenu-dropdown f-dropdown" data-dropdown-content>
           <li><a href="#">Profile</a></li>
           <li><a href="#">Settings</a></li>
           <li class="divider"></li>
