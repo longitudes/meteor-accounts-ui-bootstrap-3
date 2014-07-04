@@ -9,8 +9,9 @@
       loginButtonsSession.resetMessages();
       var callback = function (err) {
         if (!err) {
-          // Hide Sign modal (bootstrap)
-          $('#sign-popup').modal('hide');
+          // Hide Sign modal (Zurb foundation Reveal)
+          $('#sign-popup').foundation('reveal', 'close');
+          $('body').removeClass('hidden');
           // loginButtonsSession.closeDropdown();
         } else if (err instanceof Accounts.LoginCancelledError) {
           // do nothing
