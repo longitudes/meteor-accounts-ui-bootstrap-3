@@ -4,7 +4,7 @@
 <!--           -->
 <template name="_loginButtonsLoggedInDropdown">
   <div class="user">
-      <a class="username dropdown" data-dropdown="usermenu-dropdown" href="#"> 
+      <a class="username dropdown" data-dropdown="usermenu-dropdown" data-options="is_hover:true" href="{{ pathFor 'user-landing' }}"> 
           <img class="user-icon" src="{{currentUser.profile.pictureUrl}}" alt="{{displayName}}" />
           <span>{{displayName}}</span>
       </a>
